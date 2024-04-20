@@ -8,6 +8,7 @@ public class Venda {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    private String nome;
     private Date data;
     private Double valor_Total;
     @ManyToOne
@@ -20,6 +21,14 @@ public class Venda {
 
     public Funcionario getFuncionario() {
         return funcionario;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public void setFuncionario(Funcionario funcionario) {
