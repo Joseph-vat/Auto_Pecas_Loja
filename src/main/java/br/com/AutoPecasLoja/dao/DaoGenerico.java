@@ -61,7 +61,6 @@ public class DaoGenerico <E> {
 
     public void fechar() {
         conexao.close();
-        emf.close();
     }
 
     public DaoGenerico<E> rollbackTransacao() {

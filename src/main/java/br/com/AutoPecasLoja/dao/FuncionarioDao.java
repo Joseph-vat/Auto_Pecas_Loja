@@ -42,7 +42,6 @@ public class FuncionarioDao {
                 daoGenerico.abrirTransacao();
                 daoGenerico.getConexao().merge(funcionario);
                 daoGenerico.commitTransacao();
-                daoGenerico.fechar();
 
             } else {
                 System.out.println("Funcionário com o ID " + id + " não encontrado.");

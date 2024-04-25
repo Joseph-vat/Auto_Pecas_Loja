@@ -10,7 +10,6 @@ public class VendaDao {
     DaoGenerico<Venda> daoGenerico = new DaoGenerico<Venda>();
     public void inserirVenda(Venda venda) {
         daoGenerico.transacaoCompleta(venda);
-        daoGenerico.fechar();
     }
 
     // Método para listar todas as vendas do banco
@@ -90,7 +89,7 @@ public class VendaDao {
 
             daoGenerico.abrirTransacao();
             daoGenerico.getConexao().merge(vendaExistente);
-            daoGenerico.fechar();
+
 
             System.out.println("Valor total atualizado com sucesso!");
         } catch (Exception e) {
@@ -108,7 +107,7 @@ public class VendaDao {
 
             daoGenerico.abrirTransacao();
             daoGenerico.getConexao().merge(vendaExistente);
-            daoGenerico.fechar();
+
 
             System.out.println("Valor total atualizado com sucesso!");
         } catch (Exception e) {
@@ -126,7 +125,7 @@ public class VendaDao {
 
             daoGenerico.abrirTransacao();
             daoGenerico.getConexao().merge(vendaExistente);
-            daoGenerico.fechar();
+
 
             System.out.println("Valor total atualizado com sucesso!");
         } catch (Exception e) {
@@ -144,8 +143,7 @@ public class VendaDao {
 
             daoGenerico.abrirTransacao();
             daoGenerico.getConexao().merge(vendaExistente);
-            daoGenerico.fechar();
-
+            
             System.out.println("Valor total atualizado com sucesso!");
         } catch (Exception e) {
             throw new RuntimeException("Erro ao atualizar valor: " + e.getMessage());

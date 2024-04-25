@@ -37,7 +37,7 @@ public class TesteFuncionario {
         funcionario2.setCpf("111.222.333-44");
         funcionario2.setCargo("Desenvolvedor");
         funcionario2.setSenha("novaSenha");
-        funcionarioDao.atualizarFuncionario(funcionario2.getId(), funcionario2);
+        funcionarioDao.atualizarFuncionario(2, funcionario2);
 
         // Listar todos os funcionários novamente após atualização
         funcionarios = funcionarioDao.listarFuncionarios();

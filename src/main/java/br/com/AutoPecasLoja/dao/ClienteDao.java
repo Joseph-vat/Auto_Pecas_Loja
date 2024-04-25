@@ -10,7 +10,6 @@ public class ClienteDao {
 
     public void inserirCliente(Cliente cliente) {
         daoGenerico.transacaoCompleta(cliente);
-//		daoGenerico.fechar();
     }
 
     public List<Cliente> listarTodosClientes() {
