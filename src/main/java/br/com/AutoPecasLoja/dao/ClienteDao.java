@@ -1,6 +1,7 @@
 package br.com.AutoPecasLoja.dao;
 
 import br.com.AutoPecasLoja.model.Cliente;
+import org.hibernate.internal.build.AllowSysOut;
 
 import javax.persistence.TypedQuery;
 import java.util.List;
@@ -70,11 +71,18 @@ public class ClienteDao {
     public Cliente buscarClientePorId(int id) {
         try {
             // Verifica se o cliente com o ID fornecido existe no banco de dados
-            return daoGenerico.getConexao().find(Cliente.class, id);
+            Cliente cliente = daoGenerico.getConexao().find(Cliente.class, id);
+
+            if(cliente!=null){
+                return cliente;
+            }
+            else {
+                System.out.println("Cliente não encontrado no banco!");
+            }
         } catch (Exception e) {
             System.out.println("Erro ao buscar cliente por ID: " + e.getMessage());
-            return null;
         }
+        return null;
     }
 
 }

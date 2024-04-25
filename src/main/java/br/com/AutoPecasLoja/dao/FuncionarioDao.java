@@ -95,10 +95,17 @@ public class FuncionarioDao {
     // Metodo para buscar um funcionario por ID
     public Funcionario buscarFuncionarioPorId(int id) {
         try {
-            return daoGenerico.getConexao().find(Funcionario.class, id);
+            Funcionario funcionario = daoGenerico.getConexao().find(Funcionario.class, id);
+
+            if(funcionario!=null){
+                return funcionario;
+            }
+            else {
+                System.out.println("Funcionário não encontrado no banco!");
+            }
         } catch (Exception e) {
             System.out.println("Erro ao buscar funcionário por ID: " + e.getMessage());
-            return null;
         }
+        return null;
     }
 }

@@ -1,5 +1,8 @@
 package br.com.AutoPecasLoja.model;
 
+import com.sun.istack.NotNull;
+import org.hibernate.annotations.NotFound;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -12,8 +15,10 @@ public class Venda {
     private Date data;
     private Double valor_Total;
     @ManyToOne
+    @NotNull
     private Cliente cliente;
     @ManyToOne
+    @NotNull
     private Funcionario funcionario;
 
     public Venda() {

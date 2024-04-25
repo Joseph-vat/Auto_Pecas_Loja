@@ -1,5 +1,7 @@
 package br.com.AutoPecasLoja.dao;
 
+import br.com.AutoPecasLoja.model.Cliente;
+import br.com.AutoPecasLoja.model.Funcionario;
 import br.com.AutoPecasLoja.model.Venda;
 
 import javax.persistence.TypedQuery;
@@ -9,7 +11,14 @@ public class VendaDao {
 
     DaoGenerico<Venda> daoGenerico = new DaoGenerico<Venda>();
     public void inserirVenda(Venda venda) {
-        daoGenerico.transacaoCompleta(venda);
+        venda.setValor_Total(0.0);
+
+        if (venda.getFuncionario() != null && venda.getCliente() != null ){
+            daoGenerico.transacaoCompleta(venda);
+        } else {
+            System.out.println("Funcionário ou cliente nulo!");
+        }
+
     }
 
     // Método para listar todas as vendas do banco
