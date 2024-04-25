@@ -10,7 +10,11 @@ public class VeiculoDao {
     DaoGenerico<Veiculo> daoGenerico = new DaoGenerico<Veiculo>();
 
     public void inserirVeiculo(Veiculo veiculo) {
-        daoGenerico.transacaoCompleta(veiculo);
+        if (veiculo.getCliente() != null){
+            daoGenerico.transacaoCompleta(veiculo);
+        } else {
+            System.out.println("Cliente nulo!");
+        }
     }
 
     public List<Veiculo> listarTodosVeiculos() {

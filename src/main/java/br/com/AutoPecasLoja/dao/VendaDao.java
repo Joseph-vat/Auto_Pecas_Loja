@@ -1,7 +1,5 @@
 package br.com.AutoPecasLoja.dao;
 
-import br.com.AutoPecasLoja.model.Cliente;
-import br.com.AutoPecasLoja.model.Funcionario;
 import br.com.AutoPecasLoja.model.Venda;
 
 import javax.persistence.TypedQuery;

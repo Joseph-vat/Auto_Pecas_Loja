@@ -16,7 +16,6 @@ public class Veiculo {
 
     @Column(nullable = false)
     private int ano;
-
     @ManyToOne
     private Cliente cliente;
 

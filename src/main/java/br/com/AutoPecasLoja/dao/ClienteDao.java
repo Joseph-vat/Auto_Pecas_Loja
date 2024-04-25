@@ -1,7 +1,6 @@
 package br.com.AutoPecasLoja.dao;
 
 import br.com.AutoPecasLoja.model.Cliente;
-import org.hibernate.internal.build.AllowSysOut;
 
 import javax.persistence.TypedQuery;
 import java.util.List;

@@ -11,7 +11,7 @@ public class VeiculoTeste {
 
     public static void main(String[] args) {
         ClienteDao clienteDao = new ClienteDao();
-        Cliente clienteUso = clienteDao.buscarClientePorId(2);
+        Cliente clienteUso = clienteDao.buscarClientePorId(111);
 
         VeiculoDao veiculoDao = new VeiculoDao();
 
@@ -22,10 +22,9 @@ public class VeiculoTeste {
         Veiculo veiculo5 = new Veiculo();
         Veiculo veiculo6 = new Veiculo();
 
-        clienteUso = clienteDao.buscarClientePorId(3);
-        veiculo1.setModelo("Gol");
-        veiculo1.setMarca("Volkswagen");
-        veiculo1.setAno(2019);
+        veiculo1.setModelo("Bola");
+        veiculo1.setMarca("Voadora");
+        veiculo1.setAno(2090);
         veiculo1.setCliente(clienteUso);
         veiculoDao.inserirVeiculo(veiculo1);
 

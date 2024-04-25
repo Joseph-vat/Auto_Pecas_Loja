@@ -1,7 +1,6 @@
 package br.com.AutoPecasLoja.model;
 
 import com.sun.istack.NotNull;
-import org.hibernate.annotations.NotFound;
 
 import javax.persistence.*;
 import java.util.Date;
